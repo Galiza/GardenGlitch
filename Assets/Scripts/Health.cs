@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    [Header("Health Configuration")]
     [SerializeField] float health = 100f;
     [SerializeField] GameObject deathVFX;
 

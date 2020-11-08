@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Defender : MonoBehaviour
 {
+    [Header("Defender Configuration")]
     [SerializeField] int starCost = 100;
 
     // Cached reference

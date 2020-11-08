@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class StarDisplay : MonoBehaviour
 {
+    [Header("Stars Display Configuration")]
     [SerializeField] int stars = 100;
+
+    // Cached Reference
     Text starText;
 
     // Start is called before the first frame update
@@ -38,5 +41,10 @@ public class StarDisplay : MonoBehaviour
     public bool HaveEnoughStars(int amount)
     {
         return stars >= amount;
+    }
+
+    public int GetStars()
+    {
+        return stars;
     }
 }

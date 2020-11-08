@@ -1,15 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [Header("Projectile Configuration")]
     [Range(0f, 20f)]
     [SerializeField] float projectileSpeed = 10f;
 
-    [Range(0f, 90f)]
-    [SerializeField] float spinSpeed = 90f;
+    [Range(0f, 1000f)]
+    [SerializeField] float spinSpeed = 1000f;
 
+    // Cached Reference
     Damage damage;
 
     private void Start()
@@ -19,8 +22,8 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(Vector2.right * projectileSpeed * Time.deltaTime);
-        //transform.Rotate(-Vector3.forward * spinSpeed * Time.deltaTime);
+        transform.Translate(Vector2.right * projectileSpeed * Time.deltaTime, Space.World);
+        transform.Rotate(Vector3.back * spinSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D otherCollider)
